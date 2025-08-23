@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 🗺️ Google Map Fragment -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 📍 Selected Address Display -->
+
+    <!-- 🔍 Search Container -->
+    <TextView
+        android:id="@+id/tvSelectedAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:text="Selected location will appear here"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_search_card"
+        android:clipToPadding="false"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 🚕 Pickup Autocomplete Fragment -->
+        <fragment
+            android:id="@+id/pickupFragment"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 📍 Drop Autocomplete Fragment -->
+        <fragment
+            android:id="@+id/dropFragment"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- 📌 Floating Pin -->
+    <ImageView
+        android:id="@+id/floatingPin"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_pin"
+        android:tint="@android:color/holo_red_dark"
+        android:contentDescription="Map Pin"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <!-- 🎯 Action Buttons Container -->
+    <LinearLayout
+        android:id="@+id/actionButtonsContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="140dp"
+        android:paddingHorizontal="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- 🚕 Find Ride Button -->
+        <Button
+            android:id="@+id/btnFindRide"
+            android:text="Find Ride"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:elevation="8dp"
+            android:visibility="gone" />
+
+        <!-- ✅ Confirm Button -->
+        <Button
+            android:id="@+id/btnConfirm"
+            android:text="Confirm Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:elevation="6dp" />
+    </LinearLayout>
+
+    <!-- 📱 Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/colorSurface"
+        app:menu="@menu/menu_bottom" />
+
+</FrameLayout>

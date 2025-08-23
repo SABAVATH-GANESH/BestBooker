@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="16dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView android:id="@+id/tvRoute"
+        android:text="Route: " android:textStyle="bold"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/btnUber" android:text="Book with Uber (₹—)"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/btnOla" android:text="Book with Ola (₹—)"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/btnRapido" android:text="Book with Rapido (₹—)"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

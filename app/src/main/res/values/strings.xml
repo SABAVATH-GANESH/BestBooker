@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Best Booker</string>
+
+    <!-- ✅ Add Google Maps key here -->
+    <string name="google_maps_key">AIzaSyBA3-VMDH7QD9wbl9uDNWhLQoDgsU1QXu8</string>
+</resources>

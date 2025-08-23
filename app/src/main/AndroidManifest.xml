@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bestbooker">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="Best Booker"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBA3-VMDH7QD9wbl9uDNWhLQoDgsU1QXu8"/>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ResultsActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity
+            android:name=".ui.FareComparisonActivity"
+            android:exported="false">
+            <!-- You can set android:exported="true" if this activity
+                 needs to be launched by other apps.
+                 If it's only launched by your own app, "false" is safer
+                 for apps targeting Android 12 (API 31) and higher. -->
+
+            <!-- Add any <intent-filter> here if this activity
+                 should also respond to implicit intents.
+                 If it's only started explicitly, no <intent-filter> is needed. -->
+        </activity>
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
