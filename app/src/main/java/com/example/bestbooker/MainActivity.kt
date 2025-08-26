@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(b.root)
 
         // ✅ Initialize Places SDK
-        Places.initialize(applicationContext, "AIzaSyBA3-VMDH7QDywbl9uDNWhLQoDgsU1QXu8")
+        Places.initialize(applicationContext, "YOUR GOOGLE API KEY")
         val placesClient = Places.createClient(this)
 
         // ✅ Setup Bottom Navigation
